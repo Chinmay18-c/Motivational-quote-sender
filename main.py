@@ -13,11 +13,11 @@ if week_day in [0,1,2,3]:
         quotes_list = quotes.readlines()
         random_quote = random.choice(quotes_list).strip()
 
-    my_email = "jainchinmay2005@gmail.com"
+    my_email = "johndoe@example.com"
     with open("password.env") as f:
         password=f.read().strip()
 
-    to_email = "jainchinmay18@yahoo.com"
+    to_email = "johndoe18@example.com"
 
     msg = MIMEMultipart()
     msg["From"] = my_email
@@ -31,3 +31,4 @@ if week_day in [0,1,2,3]:
         connection.starttls()
         connection.login(user=my_email, password=password)
         connection.sendmail(from_addr=my_email, to_addrs=to_email, msg=msg.as_string())
+
